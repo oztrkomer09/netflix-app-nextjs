@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="flex items-center justify-center underline">
+    <footer className="flex items-center justify-center underline py-10">
       Made with ❤️ by&nbsp;
       <Link href="https://bento.me/ofozturk" target="_blank">
         Omer Faruk Ozturk
