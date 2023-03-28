@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function MoviesSection({ title, movies }) {
   return (
-    <div className="mt-9 px-12">
+    <div className="mt-9">
       <h3 className="mb-3 uppercase text-2xl tracking-tighter">{title}</h3>
       <div className="grid grid-cols-movies auto-rows-[320px] gap-6">
         {movies.map((movie) => (

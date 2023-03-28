@@ -7,7 +7,7 @@ function FeaturedMovie({ movie = {}, isCompact = true }) {
   const { poster_path, title, overview } = movie;
 
   return (
-    <div className="flex flex-col gap-6 my-14 px-12">
+    <div className="flex flex-col gap-6 my-14">
       <h1 className="text-7xl uppercase tracking-[-1px] font-black leading-[72px] max-w-[25ch]">
         {title}
       </h1>

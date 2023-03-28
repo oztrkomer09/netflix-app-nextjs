@@ -14,9 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={interFontFamily.className}>
-      <body className="bg-black text-white">
+      <body className="bg-black text-white relative">
         <Header />
-        <main>{children}</main>
+        <main className="px-12">{children}</main>
         <Footer />
       </body>
     </html>

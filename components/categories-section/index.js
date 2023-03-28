@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Categories({ categories }) {
   return (
-    <div className="flex h-[72px] gap-6 px-12">
+    <div className="flex h-[72px] gap-6">
       {categories.map((category) => (
         <Link
           key={category.id}
