@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Movie404() {
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center">
+    <div className="h-[515px] flex flex-col justify-center items-center ">
       <h1 className="font-extrabold">
         We couldn't find the movie you are looking for!
       </h1>
