@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={interFontFamily.className}>
       <body className="bg-black text-white">
         <Header />
-        <main className="px-12">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
