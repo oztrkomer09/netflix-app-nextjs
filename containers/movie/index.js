@@ -2,7 +2,7 @@ import { FeaturedMovie } from "@/components/featured-movie";
 
 function MovieContainer({ movie }) {
   return (
-    <div>
+    <div className="px-12">
       <FeaturedMovie movie={movie} isCompact={false} />
     </div>
   );
