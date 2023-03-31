@@ -13,7 +13,7 @@ function HomeContainer({ selectedCategory }) {
         <MoviesSection
           title={
             Genres.genres.find((genre) => `${genre.id}` === selectedCategory.id)
-              .name
+              ?.name
           }
           movies={selectedCategory.movies}
         />
