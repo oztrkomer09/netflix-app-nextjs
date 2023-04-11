@@ -4,7 +4,11 @@ import { Categories } from "@/components/categories-section";
 import { FeaturedMovie } from "@/components/featured-movie";
 import { MoviesSection } from "@/components/movies-section";
 
-function HomeContainer({ selectedCategory }) {
+function HomeContainer({
+  topRatedMovies = [],
+  popularMovies = [],
+  selectedCategory,
+}) {
   return (
     <div className="px-12">
       <FeaturedMovie movie={Movies.results[0]} />
@@ -19,12 +23,12 @@ function HomeContainer({ selectedCategory }) {
         />
       )}
       <MoviesSection
-        title="Popular Films"
-        movies={Movies.results.slice(1, 7)}
+        title="Top Rated Films"
+        movies={topRatedMovies.slice(1, 7)}
       />
       <MoviesSection
-        title="Your Favorites"
-        movies={Movies.results.slice(7, 13)}
+        title="Popular Films"
+        movies={popularMovies.slice(7, 13)}
       />
     </div>
   );
