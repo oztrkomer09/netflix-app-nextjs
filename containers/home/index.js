@@ -7,12 +7,13 @@ import { MoviesSection } from "@/components/movies-section";
 function HomeContainer({
   topRatedMovies = [],
   popularMovies = [],
+  categories = [],
   selectedCategory,
 }) {
   return (
     <div className="px-12">
       <FeaturedMovie movie={Movies.results[0]} />
-      <Categories categories={Genres.genres.slice(0, 5)} />
+      <Categories categories={categories.slice(0, 5)} />
       {selectedCategory.movies.length > 0 && (
         <MoviesSection
           title={
