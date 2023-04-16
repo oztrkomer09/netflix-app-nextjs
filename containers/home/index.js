@@ -1,5 +1,3 @@
-import Movies from "@/mocks/movies.json";
-import Genres from "@/mocks/genres.json";
 import { Categories } from "@/components/categories-section";
 import { FeaturedMovie } from "@/components/featured-movie";
 import { MoviesSection } from "@/components/movies-section";
