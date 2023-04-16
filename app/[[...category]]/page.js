@@ -1,7 +1,14 @@
 import HomeContainer from "@/containers/home";
-import Movies from "@/mocks/movies.json";
 
 const API_URL = "https://api.themoviedb.org/3/";
+
+const getSingleCategory = async (genreID) => {
+  const res = await fetch(
+    `${API_URL}/discover/movie?api_key=${process.env.API_KEY}&with_genres=${genreID}`
+  );
+
+  return res.json();
+};
 
 const getCategories = async () => {
   const res = await fetch(
@@ -38,11 +45,13 @@ async function HomePage({ params }) {
     { genres: categories },
   ] = await Promise.all([topRatedPromise, popularPromise, categoryPromise]);
 
-  let categorySelected;
+  let selectedCategory;
 
   if (params.category?.length > 0) {
-    categorySelected = true;
+    const { results } = await getSingleCategory(params.category[0]);
+    selectedCategory = results;
   }
+
   return (
     <HomeContainer
       categories={categories}
@@ -50,7 +59,7 @@ async function HomePage({ params }) {
       topRatedMovies={topRatedMovies}
       selectedCategory={{
         id: params.category?.[0] ?? "",
-        movies: categorySelected ? Movies.results.slice(0, 7) : [],
+        movies: selectedCategory ? selectedCategory.slice(7, 14) : [],
       }}
     />
   );

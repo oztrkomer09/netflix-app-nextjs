@@ -12,12 +12,12 @@ function HomeContainer({
 }) {
   return (
     <div className="px-12">
-      <FeaturedMovie movie={Movies.results[0]} />
+      <FeaturedMovie movie={topRatedMovies?.[0]} />
       <Categories categories={categories.slice(0, 5)} />
       {selectedCategory.movies.length > 0 && (
         <MoviesSection
           title={
-            Genres.genres.find((genre) => `${genre.id}` === selectedCategory.id)
+            categories.find((genre) => `${genre.id}` === selectedCategory.id)
               ?.name
           }
           movies={selectedCategory.movies}
