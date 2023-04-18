@@ -1,38 +1,10 @@
 import HomeContainer from "@/containers/home";
-
-const API_URL = "https://api.themoviedb.org/3/";
-
-const getSingleCategory = async (genreID) => {
-  const res = await fetch(
-    `${API_URL}/discover/movie?api_key=${process.env.API_KEY}&with_genres=${genreID}`
-  );
-
-  return res.json();
-};
-
-const getCategories = async () => {
-  const res = await fetch(
-    `${API_URL}/genre/movie/list?api_key=${process.env.API_KEY}&page=1`
-  );
-
-  return res.json();
-};
-
-const getTopRatedMovies = async () => {
-  const res = await fetch(
-    `${API_URL}/movie/top_rated?api_key=${process.env.API_KEY}&page=1`
-  );
-
-  return res.json();
-};
-
-const getPopularMovies = async () => {
-  const res = await fetch(
-    `${API_URL}/movie/popular?api_key=${process.env.API_KEY}&page=1`
-  );
-
-  return res.json();
-};
+import {
+  getCategories,
+  getPopularMovies,
+  getSingleCategory,
+  getTopRatedMovies,
+} from "@/services/movie";
 
 async function HomePage({ params }) {
   const topRatedPromise = getTopRatedMovies();
