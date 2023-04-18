@@ -24,9 +24,14 @@ const getPopularMovies = async () => {
   return fetchMovieApi("/movie/popular", `page=1`);
 };
 
+const getMovie = async (movieID) => {
+  return fetchMovieApi(`movie/${movieID}`);
+};
+
 export {
   getSingleCategory,
   getCategories,
   getTopRatedMovies,
   getPopularMovies,
+  getMovie,
 };

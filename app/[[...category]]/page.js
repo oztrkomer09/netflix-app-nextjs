@@ -7,15 +7,15 @@ import {
 } from "@/services/movie";
 
 async function HomePage({ params }) {
-  const topRatedPromise = getTopRatedMovies();
-  const popularPromise = getPopularMovies();
-  const categoryPromise = getCategories();
-
   const [
     { results: topRatedMovies },
     { results: popularMovies },
     { genres: categories },
-  ] = await Promise.all([topRatedPromise, popularPromise, categoryPromise]);
+  ] = await Promise.all([
+    getTopRatedMovies(),
+    getPopularMovies(),
+    getCategories(),
+  ]);
 
   let selectedCategory;
 
