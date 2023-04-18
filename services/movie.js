@@ -1,11 +1,15 @@
 const API_URL = "https://api.themoviedb.org/3/";
 
 const fetchMovieApi = async (pathname, query = "") => {
-  const res = await fetch(
-    `${API_URL}${pathname}?api_key=${process.env.API_KEY}&${query}`
-  );
+  try {
+    const res = await fetch(
+      `${API_URL}${pathname}?api_key=${process.env.API_KEY}&${query}`
+    );
 
-  return res.json();
+    return res.json();
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 const getSingleCategory = async (genreID) => {

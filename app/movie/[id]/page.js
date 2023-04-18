@@ -8,9 +8,6 @@ async function MoviePage({ params, searchParams }) {
   if (!movieDetail) {
     notFound();
   }
-  if (searchParams.error === "true") {
-    throw new Error("Error happened");
-  }
 
   return <MovieContainer movie={movieDetail} />;
 }
